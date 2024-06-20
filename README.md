@@ -23,6 +23,6 @@ My task was to create a Data Base for a business, so chose café and then practi
 <br>[Create DataBase script](DataBase_Cafe_Create.sql)
 
 <br>
-<br>
 
+**Scheme:**
 <div align="center"><img height="700" src="Tables.pgerd.png"  /></div> 
