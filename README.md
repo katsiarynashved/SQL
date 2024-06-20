@@ -3,11 +3,11 @@ Hi! My name is Kate and this is my project I made during the studying of Data Ba
 My task was to create a Data Base for a business, so chose café and then practiced on it.
 
 **Skills I’ve got:**
-<br>•	create table / delete table
-<br>•	full form of SQL query (select, where, group by, having, order by)
-<br>•	functions (min, max, sum, avg, count)
-<br>•	join (inner, left, right, full)
-<br>•	subqueries
+<br>🔹	create table / delete table
+<br>🔹 	full form of SQL query (select, where, group by, having, order by)
+<br>🔹 functions (min, max, sum, avg, count)
+<br>🔹 	join (inner, left, right, full)
+<br>🔹 	subqueries
 
 
 ### Below you can see the scheme of the DB I made. There are several main modules:
@@ -27,8 +27,9 @@ My task was to create a Data Base for a business, so chose café and then practi
 
 <br>
 
-**Here is a link to the code for creating the database:**
-<br>[Create DataBase script](DataBase_Cafe_Create.sql)
+**Here are links to the scripts for the database:**
+<br>✅ [Create DataBase script](DataBase_Cafe_Create.sql)
+<br>✅ [Examples of the SQL-requests I do](Scrips.txt)
 
 <br>
 
