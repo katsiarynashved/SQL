@@ -1,0 +1,178 @@
+1.	Select everything from the table “menu”.
+select * from menu
+
+
+
+2.	Show everything from the table “seasonalmenuchanges”.
+select * from seasonalmenuchanges
+
+
+
+3.	Select all the fields from “menu” and “seasonalmenuchanges” connected by the primary key.
+
+select a.*, b.* from menu a left join seasonalmenuchanges b
+on a.seasonalmenuchangesid = b.id
+
+
+
+4.	Present all the fields from the table “orders”.
+select * from orders
+
+
+
+5.	Find all the fields from table “orders” and order them by “order_date”.
+
+select * from orders
+order by order_date
+
+
+
+6.	Show everything from table “employee”.
+select * from employee
+
+
+
+7.	Select all the information from the table “payment” and “paymenttype”. Connect them with the primary key.
+
+select a.*, b.* 
+from payment a full join paymenttype b
+on a.paymenttypeid = b.id
+
+
+
+8.	Find employee whose phone number contains symbols “33”.
+
+select fullname, telephone from employee
+where telephone like '%33%'
+
+
+
+9.	Find all the orders that served employee Rim. Also please show his phone number.
+
+select a.*, telephone from orders a, employee b 
+where a.employeeid = b.id and b.fullname = 'Rim'
+
+
+
+10.	Calculate payments summary of all the orders that were made on the 2,3,4 of January 2024. 
+
+select sum(amount) from payment
+where date (paymentdate) in ('2024-01-02', '2024-01-03', '2024-01-04')
+
+
+
+11.	Return all the fields from the current menu (that will be active for today). And take into account table “seasonalmenuchanges”.
+
+select a.* 
+from menu a left join seasonalmenuchanges b on a.seasonalmenuchangesid=b.id
+where a.isactive = true 
+and ((a.seasonalmenuchangesid is null or (b.startdate <= now() and b.enddate >= now())))
+
+
+
+12.	The same as #11 but using subqueries.
+
+select a.* from menu a
+where a.isactive = 'true' and (a.seasonalmenuchangesid is null or a.seasonalmenuchangesid =  
+								(select b.id from seasonalmenuchanges b 
+								where b.startdate <= now() and b.enddate >= now ()))
+
+
+
+13.	Group payments by date of paymentdate 
+return avg amount (if avg more than 1)
+retutn summary of amount (if sum equals 10 or more than 10) 
+exclude in grouping ‘small’ orders (where amount less than 5)
+ordered by date of paymentdate from the earliest to latest
+
+select date(paymentdate), avg(amount), sum(amount) from payment
+where amount >5
+group by date(paymentdate)
+having avg(amount) >1 and sum(amount) >=10
+order by date(paymentdate) desc
+
+
+
+14.	Find the most popular way of payment: 
+-	select all fields from the table “paymenttype”, where payment type is not tip; 
+-	add sum of payment for the last three months.
+
+select b.*, sum(a.amount) 
+from payment a join paymenttype b on a.paymenttypeid=b.id
+where b.istip <> 'true'
+and date(paymentdate) >=  date(now()) - interval '3 month'
+and date(paymentdate) <= date(now())
+group by b.id
+
+
+
+15. Return count of records from the table "historyofprices" grouped by menu_id and ordered by menu_id.
+
+select count(*), menuid from historyofprices
+group by menuid
+order by menuid
+
+
+
+16. Return me current menu prices: 
+- namemenu, price (value or null if there is no historyofprices), 
+- date when price was updated (menu, historyofprices); 
+- sort by name of menu; 
+- where name of menu is not ‘Latte’; (historyofprices, menu).
+
+select m.*, s.*, b.* 
+from menu m 
+	left join seasonalmenuchanges s on m.seasonalmenuchangesid = s.id, 
+	historyofprices b, 
+	historyofprices c
+where m.namemenu <> 'Latte' and m.isactive = true 
+and ((s.startdate <= now() and s.enddate > now()) or (m.seasonalmenuchangesid is null)) 
+and b.menuid=c.menuid AND m.id = b.menuid
+group by m.id,s.id,b.id
+having b.startdate=max(c.startdate)
+order by m.namemenu
+
+
+
+17. The same as #16 but using subqueries.
+
+select a.namemenu, b.startdate, b.enddate, c.menuid, c.price from menu a 
+			left join seasonalmenuchanges b on b.id=a.seasonalmenuchangesid 
+			left join historyofprices c on a.id=c.menuid
+where a.namemenu <> 'Latte' 
+and a.isactive = true
+and c.startdate=(select max(d.startdate) from historyofprices d where c.menuid = d.menuid)
+and ((a.seasonalmenuchangesid is null) 
+or a.seasonalmenuchangesid in 
+				(select c.id from seasonalmenuchanges c 
+				where c.startdate <= now() and c.enddate >= now() and b.id=c.id))
+order by a.namemenu
+
+
+
+18. Return sum of  all payments that is a tip (could be find in "paymenytype" table), 
+- grouped by date;
+- ordered by date.
+
+select sum(a.amount) from payment a join paymenttype b on a.paymenttypeid = b.id
+where b.istip = true
+group by date(a.paymentdate)
+order by date(a.paymentdate)
+
+
+
+19. Return all information from employee and count of orders which employee served, 
+- grouped by employee and order date, if employee didn’t serve any table, he/she should appear too.
+
+select a.*, b.order_date, count(b.id) 
+from employee a left join orders b on a.id = b.employeeid
+group by a.id, b.order_date
+
+
+20. Extract all information from payment and pamenttype, we need only payments where amount >= avg amount.
+
+select a.*, b.*, avg(c.amount) from payment c, payment a, paymenttype b   
+where a.paymenttypeid=b.id
+group by a.id, b.id
+having a.amount > avg(c.amount)
+order by a.id
