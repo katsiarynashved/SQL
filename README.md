@@ -16,4 +16,4 @@ Below you can see the scheme of the DB I made. There are several main modules:
 <br>(5) If the order has a reservation, we need to see the table “reservation” through the table “orderreservation”. “Reservation” has next data: how reserved a table, which one, how many persons are going to be and phone number of the contact person.
 <br>(6) Finally, when we want to know who served the order, we refer to the table “employee” where we can find full name of the employee, her/his phone number, birthdate, email address and whether she/he is hired right now.
 
-! ()
+<div align="center"><img height="700" src="Tables.pgerd.png"  /></div> 
