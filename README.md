@@ -1,6 +1,4 @@
-# Data Base of Cafe
-Hi! My name is Kate and this is my project I made during the studying of Data Bases. I worked in PostgreSQL (using pgAdmin4).
-My task was to create a Data Base for a business, so chose café and then practiced on it.
+<p><i>Through my studies, I have gained valuable experience in working with databases using both GUI and CLI. I have successfully completed several projects, including one that utilized PostgreSQL with a user-friendly UI, and another that leveraged the command line for MySQL. This hands-on experience has equipped me with essential skills in database management and development.  </i></p>
 
 **Skills I’ve got:**
 <br>🔹	create table / delete table
@@ -8,7 +6,12 @@ My task was to create a Data Base for a business, so chose café and then practi
 <br>🔹 functions (min, max, sum, avg, count)
 <br>🔹 	join (inner, left, right, full)
 <br>🔹 	subqueries
+<br>
+<br>
 
+# 1️⃣ Data Base of Cafe
+Hi! My name is Kate and this is my project I made during the studying of Data Bases. I worked in PostgreSQL (using pgAdmin4).
+My task was to create a Data Base for a business, so chose café and then practiced on it.
 
 ### Below you can see the scheme of the DB I made. There are several main modules:
 **1)**	orders
@@ -35,3 +38,11 @@ My task was to create a Data Base for a business, so chose café and then practi
 
 **Scheme:**
 <div align="center"><img height="700" src="Tables.pgerd.png"  /></div> 
+
+# 2️⃣ In the process of creation
+<br>
+
+### Tips for SQL
+
+<br>
+<img src="Tips_for_SQL.png" alt="Tip's for SQL" style="width:auto">
