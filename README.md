@@ -10,8 +10,8 @@
 <br>
 
 # 1️⃣ Data Base of Cafe
-Hi! My name is Kate and this is my project I made during the studying of Data Bases. I worked in PostgreSQL (using pgAdmin4).
-My task was to create a Data Base for a business, so chose café and then practiced on it.
+<p><i>This project is made with PostgreSQL (using pgAdmin4).
+My task was to create a Data Base for a business, so chose café and then practiced on it.</i></p>
 
 ### Below you can see the scheme of the DB I made. There are several main modules:
 **1)**	orders
