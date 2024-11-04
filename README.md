@@ -60,4 +60,4 @@ Then began a main project. The goal was to create relational database, complete 
 ## Tips for SQL
 
 <br>
-<img src="Tips_for_SQL.png" alt="Tip's for SQL" style="width:auto">
+<img src="Scripts Second project.sql" alt="Tip's for SQL" style="width:auto">
