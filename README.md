@@ -30,13 +30,13 @@ My task was to create a Data Base for a business, so chose café and then practi
 
 <br>
 
-**Here are links to the scripts for the database:**
-<br>✅ [Create DataBase script](DataBase_Cafe_Create.sql)
+### Here are links to the scripts for the database:
+✅ [Create DataBase script](DataBase_Cafe_Create.sql)
 <br>✅ [Examples of the SQL-requests I do](Scrips.txt)
 
 <br>
 
-**Scheme:**
+### Scheme:
 <div align="center"><img height="700" src="Tables.pgerd.png"  /></div> 
 
 # 2️⃣ Second project
@@ -45,18 +45,19 @@ My task was to create a Data Base for a business, so chose café and then practi
 Then began a main project. The goal was to create relational database, complete it with 3 structured tables and fulfill them with data. After that I needed to executed some queries.</i></p>
 <p>During this task I strengthened my knowledge in subqueries</p>
 
-**Link to the Script:**
-<br>
+### Link to the Script:
 ✅ <a href='Scripts from Trainee.sql'>Link to the Script</a>
+<br>
+<br>
 
-**Scheme:**
+### Scheme:
 
-<img src='Schema.png' alt='Schema of Second Project' style='width:auto'>
-
-
+<div align='center'><img src='Schema.png' alt='Schema of Second Project' width='800px'></div>
 
 
-### Tips for SQL
+
+
+## Tips for SQL
 
 <br>
 <img src="Tips_for_SQL.png" alt="Tip's for SQL" style="width:auto">
