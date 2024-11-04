@@ -46,7 +46,7 @@ Then began a main project. The goal was to create relational database, complete 
 <p>During this task I strengthened my knowledge in subqueries</p>
 
 ### Link to the Script:
-✅ <a href='Scripts from Trainee.sql'>Link to the Script</a>
+✅ <a href='Scripts Second project.sql'>Link to the Script</a>
 <br>
 <br>
 
@@ -60,4 +60,4 @@ Then began a main project. The goal was to create relational database, complete 
 ## Tips for SQL
 
 <br>
-<img src="Scripts Second project.sql" alt="Tip's for SQL" style="width:auto">
+<img src="Tips_for_SQL.png" alt="Tip's for SQL" style="width:auto">
