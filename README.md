@@ -39,8 +39,22 @@ My task was to create a Data Base for a business, so chose café and then practi
 **Scheme:**
 <div align="center"><img height="700" src="Tables.pgerd.png"  /></div> 
 
-# 2️⃣ In the process of creation
+# 2️⃣ Second project
 <br>
+<p><i>As a warm-up, table 'Produkty' was created, serving as the foundation for executing various queries.
+Then began a main project. The goal was to create relational database, complete it with 3 structured tables and fulfill them with data. After that I needed to executed some queries.</i></p>
+<p>During this task I strengthened my knowledge in subqueries</p>
+
+**Link to the Script:**
+<br>
+✅ <a href='Scripts from Trainee.sql'>Link to the Script</a>
+
+**Scheme:**
+
+<img src='Schema.png' alt='Schema of Second Project' style='width:auto'>
+
+
+
 
 ### Tips for SQL
 
